@@ -3,7 +3,11 @@ import { SplineSceneBasic } from "@/components/SplineSceneBasic";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden">
+    <section
+      id="home"
+      aria-labelledby="hero-heading"
+      className="relative min-h-[100svh] overflow-hidden"
+    >
       <div
         className="
           max-w-[1200px]
@@ -16,9 +20,10 @@ export default function Hero() {
           items-center
         "
       >
-        {/* LEFT SIDE — TEXT */}
-        <div className="text-center lg:text-left mb-0 lg:mb-12">
+        {/* LEFT — PRIMARY CONTENT */}
+        <header className="text-center lg:text-left">
           <motion.h1
+            id="hero-heading"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -32,17 +37,22 @@ export default function Hero() {
               lg:text-[56px]
             "
           >
-            Innovate.<br />
+            Innovate.
+            <br />
             Elevate. Succeed.
           </motion.h1>
 
-          <p className="text-[#9CA3AF] mt-5 max-w-[420px] mx-auto lg:mx-0">
-            Digital solutions that scale your brand.
+          {/* SEO-friendly supporting text */}
+          <p className="text-[#9CA3AF] mt-5 max-w-[440px] mx-auto lg:mx-0">
+            Velryon is a digital agency delivering modern web design, branding,
+            and scalable technology solutions to help businesses grow online.
           </p>
 
-          {/* GET STARTED BUTTON */}
-          <div className="mt-8 flex justify-center lg:justify-start">
-            <button
+          {/* PRIMARY CTA — DESKTOP ONLY */}
+          <div className="mt-8 hidden md:flex justify-center lg:justify-start">
+            <a
+              href="#contact"
+              aria-label="Contact Velryon for digital services"
               className="
                 px-6 py-3
                 rounded-md
@@ -55,14 +65,16 @@ export default function Hero() {
               "
             >
               Get Started
-            </button>
+            </a>
           </div>
-        </div>
+        </header>
 
-        {/* RIGHT SIDE — 3D WITH GRADIENT GLOW */}
-        <div className="relative w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px]">
-          
-          {/* GRADIENT GLOW BEHIND 3D */}
+        {/* RIGHT — VISUAL / 3D (DECORATIVE) */}
+        <div
+          className="relative w-full h-[300px] sm:h-[420px] md:h-[520px] lg:h-[600px] flex items-center justify-center"
+          aria-hidden="true"
+        >
+          {/* GRADIENT GLOW */}
           <div
             className="
               absolute inset-0
@@ -76,7 +88,9 @@ export default function Hero() {
           />
 
           {/* 3D SCENE */}
-          <SplineSceneBasic />
+          <div className="w-full h-full max-w-[560px]">
+            <SplineSceneBasic />
+          </div>
         </div>
       </div>
     </section>
