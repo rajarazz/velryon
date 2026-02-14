@@ -1,3 +1,5 @@
+
+
 export default function About() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-24 text-center">
@@ -10,5 +12,5 @@ export default function About() {
       </p>
     </section>
   );
-}AVSS
+}
 
