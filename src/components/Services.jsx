@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 /* ================= PREMIUM ICONS ================= */
 
@@ -75,46 +76,49 @@ const DesignIcon = () => (
 const services = [
   {
     title: "Web Development",
-    desc: "Custom, scalable, and responsive websites built for performance, security, and long-term growth.",
+    desc: "Custom, scalable, and responsive websites built for performance and long-term growth.",
     Icon: WebIcon,
+    path: "/services/web-development",
   },
   {
     title: "Content Creation",
-    desc: "High-quality visual and written content crafted to engage audiences across all digital platforms.",
+    desc: "High-quality visual and written content crafted to engage audiences.",
     Icon: ContentIcon,
+    path: "/services/content-creation",
   },
   {
     title: "Digital Marketing",
-    desc: "Data-driven marketing strategies that increase visibility, traffic, and conversions online.",
+    desc: "Data-driven marketing strategies that increase visibility and conversions.",
     Icon: MarketingIcon,
+    path: "/services/digital-marketing",
   },
   {
     title: "AI Agent Development",
-    desc: "Intelligent AI agents and automation systems designed to streamline operations and enhance decision-making.",
+    desc: "Intelligent automation systems to streamline operations.",
     Icon: AiIcon,
+    path: "/services/ai-agent-development",
   },
   {
     title: "App Development",
-    desc: "Modern, high-performance mobile and web applications built for seamless user experience.",
+    desc: "Modern mobile and web applications built for performance.",
     Icon: AppIcon,
+    path: "/services/app-development",
   },
   {
     title: "UI/UX Designing",
-    desc: "Strategic and user-centered interface designs combining aesthetics with functionality.",
+    desc: "Strategic and user-centered interface design solutions.",
     Icon: DesignIcon,
+    path: "/services/ui-ux-designing",
   },
 ];
 
 /* ================= COMPONENT ================= */
 
 export default function Services() {
+  const navigate = useNavigate();
+
   return (
     <section id="services" className="relative py-10">
-      
-      {/* Top Glow Divider */}
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[1px]
-        bg-gradient-to-r from-transparent via-[#1F7CFF] to-transparent opacity-70" /> */}
-
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -124,9 +128,7 @@ export default function Services() {
           </h2>
 
           <p className="text-[#9CA3AF] text-[14px] mt-3 max-w-2xl mx-auto">
-            Velryon delivers intelligent digital solutions including web
-            development, AI systems, content creation, and marketing strategies
-            designed to accelerate modern business growth.
+            Velryon delivers intelligent digital solutions designed to accelerate modern business growth.
           </p>
         </div>
 
@@ -135,23 +137,22 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.article
               key={service.title}
+              onClick={() => navigate(service.path)}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -12, scale: 1.02 }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="relative group rounded-2xl bg-[#11162A]/80 backdrop-blur
+              className="cursor-pointer relative group rounded-2xl bg-[#11162A]/80 backdrop-blur
               border border-white/5 p-8 overflow-hidden transition-all duration-500"
             >
-              {/* Hover Glow */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100
                 transition duration-500
                 bg-gradient-to-br from-[#1F7CFF]/20 via-transparent to-[#E94FFF]/20 blur-xl" />
 
-              {/* Icon */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 4, repeat: Infinity }}
                 className="relative z-10 mb-6 h-16 w-16 mx-auto
                 flex items-center justify-center rounded-xl
                 bg-gradient-to-br from-[#1F7CFF]/20 to-[#E94FFF]/20
@@ -160,7 +161,6 @@ export default function Services() {
                 <service.Icon />
               </motion.div>
 
-              {/* Text */}
               <div className="relative z-10 text-center">
                 <h3 className="text-[18px] font-semibold">
                   {service.title}
