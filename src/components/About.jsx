@@ -2,7 +2,8 @@
 
 export default function About() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-24 text-center">
+    <section className="max-w-5xl  mx-auto px-6 py-0 text-center">
+      
       <h2 className="text-3xl font-['Poppins'] font-semibold">
         Where Innovation Meets Growth
       </h2>
@@ -10,6 +11,7 @@ export default function About() {
         Velryon helps brands build powerful digital identities through modern
         design, smart technology, and growth-focused strategies.
       </p>
+     
     </section>
   );
 }

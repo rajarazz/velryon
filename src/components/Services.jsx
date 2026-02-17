@@ -109,11 +109,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20">
-
+    <section id="services" className="relative py-10">
+      
       {/* Top Glow Divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[1px]
-        bg-gradient-to-r from-transparent via-[#1F7CFF] to-transparent opacity-70" />
+      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[1px]
+        bg-gradient-to-r from-transparent via-[#1F7CFF] to-transparent opacity-70" /> */}
 
       <div className="max-w-7xl mx-auto px-6">
 

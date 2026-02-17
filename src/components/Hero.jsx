@@ -1,96 +1,72 @@
-import { motion } from "framer-motion";
-import { SplineSceneBasic } from "@/components/SplineSceneBasic";
+import { Rocket, ArrowRight, Phone } from "lucide-react";
 
 export default function Hero() {
+
+  const handleGetStarted = () => {
+    const section = document.getElementById("services");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleWhatsApp = () => {
+    const phoneNumber = "919334464905";
+    const message = "Hello Velryon, I would like to discuss my project.";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <section
-      id="home"
-      aria-labelledby="hero-heading"
-      className="relative min-h-[100svh] overflow-hidden"
-    >
-      <div
-        className="
-          max-w-[1200px]
-          mx-auto
-          px-5 sm:px-8
-          pt-[96px] sm:pt-[120px] lg:pt-[140px]
-          pb-[72px] sm:pb-[100px] lg:pb-[120px]
-          grid grid-cols-1 lg:grid-cols-2
-          gap-12 lg:gap-20
-          items-center
-        "
-      >
-        {/* LEFT — PRIMARY CONTENT */}
-        <header className="text-center lg:text-left">
-          <motion.h1
-            id="hero-heading"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="
-              font-['Poppins']
-              font-bold
-              leading-[1.1]
-              text-[32px]
-              sm:text-[40px]
-              md:text-[48px]
-              lg:text-[56px]
-            "
-          >
-            Innovate.
-            <br />
-            Elevate. Succeed.
-          </motion.h1>
+    <section className="relative mx-auto w-full max-w-5xl min-h-screen flex items-center justify-center text-white">
 
-          {/* SEO-friendly supporting text */}
-          <p className="text-[#9CA3AF] mt-5 max-w-[440px] mx-auto lg:mx-0">
-            Velryon is a digital agency delivering modern web design, branding,
-            and scalable technology solutions to help businesses grow online.
-          </p>
+      {/* Main Content */}
+      <div className="relative flex flex-col items-center justify-center gap-6 pt-32 pb-24 text-center px-6">
 
-          {/* PRIMARY CTA — DESKTOP ONLY */}
-          <div className="mt-8 hidden md:flex justify-center lg:justify-start">
-            <a
-              href="#contact"
-              aria-label="Contact Velryon for digital services"
-              className="
-                px-6 py-3
-                rounded-md
-                text-sm font-medium
-                bg-gradient-to-r from-[#6A3FF2] to-[#1F7CFF]
-                shadow-[0_0_40px_rgba(106,63,242,0.45)]
-                hover:scale-[1.03]
-                active:scale-[0.98]
-                transition
-              "
-            >
-              Get Started
-            </a>
-          </div>
-        </header>
-
-        {/* RIGHT — VISUAL / 3D (DECORATIVE) */}
-        <div
-          className="relative w-full h-[300px] sm:h-[420px] md:h-[520px] lg:h-[600px] flex items-center justify-center"
-          aria-hidden="true"
+        {/* Badge */}
+        <a
+          href="#"
+          className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs backdrop-blur transition hover:bg-white/10"
         >
-          {/* GRADIENT GLOW */}
-          <div
-            className="
-              absolute inset-0
-              -z-10
-              bg-gradient-to-br
-              from-[#1F7CFF]/30
-              via-[#6A3FF2]/20
-              to-[#E94FFF]/30
-              blur-[120px]
-            "
-          />
+          <Rocket size={14} className="text-gray-400" />
+          <span>Shipped new features!</span>
+          <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+        </a>
 
-          {/* 3D SCENE */}
-          <div className="w-full h-full max-w-[560px]">
-            <SplineSceneBasic />
-          </div>
+        {/* Heading */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+          Building Teams That Help
+          <br />
+          You Scale and Lead
+        </h1>
+
+        {/* Subheading */}
+        <p className="max-w-md text-gray-400 text-base sm:text-lg md:text-xl">
+          Connecting you with world-class talent
+          <br />
+          to scale, innovate, and lead.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          
+          {/* WhatsApp Button */}
+          <button
+            onClick={handleWhatsApp}
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-medium hover:scale-105 transition"
+          >
+            <Phone size={18} />
+            Book a Call
+          </button>
+
+          {/* Get Started */}
+          <button
+            onClick={handleGetStarted}
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition"
+          >
+            Get Started
+            <ArrowRight size={18} />
+          </button>
+
         </div>
       </div>
     </section>
