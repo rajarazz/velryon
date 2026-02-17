@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import Tilt from "react-parallax-tilt";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -95,10 +94,10 @@ export default function ServicePricing() {
 
   return (
     <>
-      <Helmet>
+      
         <title>{service.title} | Velryon</title>
         <meta name="description" content={service.description} />
-      </Helmet>
+      
 
       <section className="min-h-screen py-24 px-6 bg-[#0f1323] text-white">
         <div className="max-w-6xl mx-auto">
