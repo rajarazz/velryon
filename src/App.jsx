@@ -23,7 +23,7 @@ export default function App() {
   <div className="relative z-10 pointer-events-auto text-white font-['Inter']">
     <Navbar />
     <Hero />
-    <About />
+    {/* <About /> */}
     <Services />
     <WhyChoose />
 
