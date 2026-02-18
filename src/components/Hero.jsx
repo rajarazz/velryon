@@ -28,7 +28,7 @@ export default function Hero() {
           className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs backdrop-blur transition hover:bg-white/10"
         >
           <Rocket size={14} className="text-gray-400" />
-          <span>Shipped new features!</span>
+          <span>Connect with us !</span>
           <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
         </a>
 
